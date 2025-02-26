@@ -9,7 +9,7 @@
 - Não há restrição quanto ao uso de bibliotecas de apoio;
 - No final envie para o RH o link do seu projeto.
 - Os arquivos de Mocks estão salvos na pasta src/mocks
-- O link para acesso ao arquivo Figma: (https://www.figma.com/file/D3AXMgEYGulyd8MYIuLE5O/Teste-Frontend-Pleno?node-id=0-1)
+- O link para acesso ao arquivo Figma: (https://www.figma.com/design/pn0n2pyoyKHTwcYSTgwpxq/Teste-Capys?node-id=13099-314&m=dev&t=XASy4RX6R3lgKpYS-1)
 
 ---
 

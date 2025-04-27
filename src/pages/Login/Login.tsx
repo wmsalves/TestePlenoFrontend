@@ -11,10 +11,37 @@ const Login: React.FC = () => {
   const [mostrarSenha, setMostrarSenha] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ email, senha });
-    navigate("/home");
+
+    try {
+      const response = await fetch("http://localhost:3001/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          senha: senha,
+        }),
+      });
+
+      // example: {
+      //  email: "teste@capys.com",
+      //  senha: "123456"
+      // }
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login realizado, token:", data.token);
+        navigate("/home");
+      } else {
+        alert("Email ou senha inválidos!");
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+      alert("Erro ao tentar logar. Tente novamente mais tarde.");
+    }
   };
 
   return (

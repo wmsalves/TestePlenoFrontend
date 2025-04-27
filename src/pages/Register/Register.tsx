@@ -19,11 +19,46 @@ const Register: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const handleRegister = (e: FormEvent<HTMLFormElement>) => {
+  const handleRegister = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ nome, email, senha, confirmarSenha, bio, contato, cargo });
 
-    navigate("/home");
+    try {
+      const response = await fetch("http://localhost:3001/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome,
+          email,
+          senha,
+          confirmarSenha,
+          bio,
+          contato,
+          cargo,
+        }),
+      });
+      
+      // example: {
+      //   "nome": "Teste",
+      //   "email": "teste@email.com",
+      //   "senha": "123456",
+      //   "confirmarSenha": "123456",
+      //   "bio": "Sou desenvolvedor",
+      //   "contato": "31999999999",
+      //   "cargo": "frontend"
+      // }
+
+      if (response.status === 201) {
+        alert("Cadastro realizado com sucesso!");
+        navigate("/login");
+      } else {
+        alert("Erro ao cadastrar. Tente novamente.");
+      }
+    } catch (error) {
+      console.error("Erro ao fazer cadastro:", error);
+      alert("Erro ao tentar cadastrar. Tente novamente mais tarde.");
+    }
   };
 
   return (

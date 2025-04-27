@@ -1,0 +1,47 @@
+{
+  "source": "mockoon:environment",
+  "version": "1.19.0",
+  "name": "Capys Mock API",
+  "port": 3001,
+  "routes": [
+    {
+      "uuid": "1",
+      "method": "post",
+      "endpoint": "login",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "{ \"token\": \"abc123\" }"
+        }
+      ]
+    },
+    {
+      "uuid": "2",
+      "method": "post",
+      "endpoint": "register",
+      "responses": [
+        {
+          "statusCode": 201,
+          "body": "{ \"message\": \"Cadastro realizado com sucesso\" }"
+        }
+      ]
+    },
+    {
+      "uuid": "3",
+      "method": "get",
+      "endpoint": "user",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "{ \"name\": \"Teste Capys\" }"
+        }
+      ]
+    }
+  ],
+  "proxyMode": false,
+  "proxyRemovePrefix": false,
+  "https": false,
+  "cors": true,
+  "headers": [],
+  "latency": 0
+}

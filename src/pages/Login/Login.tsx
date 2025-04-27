@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import Button from "../../components/Button/Button";
 import FormInput from "../../components/FormInput/FormInput";
@@ -8,10 +9,12 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
   const [mostrarSenha, setMostrarSenha] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log({ email, senha });
+    navigate("/home");
   };
 
   return (

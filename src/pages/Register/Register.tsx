@@ -22,6 +22,8 @@ const Register: React.FC = () => {
   const handleRegister = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log({ nome, email, senha, confirmarSenha, bio, contato, cargo });
+
+    navigate("/home");
   };
 
   return (

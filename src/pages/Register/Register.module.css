@@ -1,0 +1,86 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.backButton {
+  background-color: var(--form-background-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: var(--primary-color);
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto 0 auto;
+  background-color: var(--form-background-color);
+  padding: 40px 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 24px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary-color);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--grey-light);
+  border-radius: 8px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 14px;
+}

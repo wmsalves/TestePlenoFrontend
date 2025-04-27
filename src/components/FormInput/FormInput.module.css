@@ -16,11 +16,12 @@
 
 .input {
   width: 100%;
-  padding: 10px 40px 10px 10px;
+  padding: 10px;
   border: 1px solid var(--grey-light);
   border-radius: 8px;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-size: 14px;
 }
 
 .togglePassword {
